@@ -41,21 +41,16 @@
       const newTime = new Date();
       year.innerHTML = newTime.getFullYear();
 
-      let dayName = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ];
+      let dayName = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
       let days = newTime.getUTCDate();
+      day.innerHTML = dayName[days];
       if (days < 10) {
-        (day.innerHTML = "-" + 0 + days), dayName[days];
+        day.innerHTML =
+          "-" + 0 + days + " " + "(" + dayName[newTime.getDay()] + ")";
       } else {
-        day.innerHTML = days;
+        day.innerHTML =
+          "-" + 0 + days + " " + "(" + dayName[newTime.getDay()] + ")";
       }
 
       let monthName = [
