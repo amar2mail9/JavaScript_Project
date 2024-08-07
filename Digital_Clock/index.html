@@ -5,8 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <h1>Digital Clock</h1>
+  <body class="bg-slate-900 text-white">
+    <div class="w-full h-screen flex items-center justify-center text-3xl">
+      <div
+        class="flex items-center shadow-md border border-slate-500 rounded-md p-3 flex-col"
+      >
+        <h1>Digital Clock</h1>
+        <div class="p-3">
+          <span id="hour">00</span>
+          <span>:</span>
+          <span id="min">00</span>
+          <span>:</span>
+          <span id="sec">00</span>
+        </div>
+        <div class="flex">
+          <span id="year"></span>
+          <span id="month"></span>
+          <span id="day"></span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const hour = document.getElementById("hour");
+      const min = document.getElementById("min");
+      const sec = document.getElementById("sec");
+      const year = document.getElementById("year");
+      const month = document.getElementById("month");
+      const day = document.getElementById("day");
+
+      // hour.textContent = "hello";
+
+      const newTime = new Date();
+      year.innerHTML = newTime.getFullYear();
+
+      let dayName = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+
+      let days = newTime.getUTCDate();
+      if (days < 10) {
+        (day.innerHTML = "-" + 0 + days), dayName[days];
+      } else {
+        day.innerHTML = days;
+      }
+
+      let monthName = [
+        "JAN",
+        "FEB",
+        "MAR",
+        "APR",
+        "MAY",
+        "JUN", // Fixed typo "JUNE" to "JUN"
+        "JUL", // Fixed typo "JULY" to "JUL"
+        "AUG",
+        "SEP",
+        "OCT",
+        "NOV",
+        "DEC", // Added missing quotes
+      ];
+      let months = newTime.getMonth();
+      if (months < 10) {
+        month.innerHTML = "-" + monthName[months];
+      } else {
+        month.innerHTML = monthName[months];
+      }
+    </script>
   </body>
 </html>
