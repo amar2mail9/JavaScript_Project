@@ -140,4 +140,11 @@ inputAudio.onchange = function () {
   };
 
   // paly currentTime
+
+  // volume btn
+  let volumeBtn = document.getElementById("volumeBtn");
+
+  volumeBtn.onchange = function () {
+    audio.volume = this.value;
+  };
 };
