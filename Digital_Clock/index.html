@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-900 text-white">
+    <div class="w-full h-screen flex items-center justify-center text-3xl">
+      <div
+        class="flex items-center border border-slate-500 rounded-md p-3 flex-col shadow-md shadow-sky-400"
+      >
+        <h1>Digital Clock</h1>
+        <div class="p-3">
+          <span id="time" class="text-slate-400"></span>
+        </div>
+        <div class="flex text-green-500">
+          <span id="year"></span>
+          <span id="month"></span>
+          <span id="day"></span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const time = document.getElementById("time");
+      const min = document.getElementById("min");
+      const sec = document.getElementById("sec");
+      const year = document.getElementById("year");
+      const month = document.getElementById("month");
+      const day = document.getElementById("day");
+
+      // let newTime = new Date();
+
+      const CurrentTime = () => {
+        let newTime = new Date();
+        time.innerHTML = newTime.toLocaleTimeString();
+        year.innerHTML = newTime.getFullYear();
+
+        let dayName = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+        let days = newTime.getUTCDate();
+        day.innerHTML = dayName[days];
+        if (days < 10) {
+          day.innerHTML =
+            "-" + 0 + days + " " + "(" + dayName[newTime.getDay()] + ")";
+        } else {
+          day.innerHTML =
+            "-" + 0 + days + " " + "(" + dayName[newTime.getDay()] + ")";
+        }
+
+        let monthName = [
+          "JAN",
+          "FEB",
+          "MAR",
+          "APR",
+          "MAY",
+          "JUN", // Fixed typo "JUNE" to "JUN"
+          "JUL", // Fixed typo "JULY" to "JUL"
+          "AUG",
+          "SEP",
+          "OCT",
+          "NOV",
+          "DEC", // Added missing quotes
+        ];
+        let months = newTime.getMonth();
+        if (months < 10) {
+          month.innerHTML = "-" + monthName[months];
+        } else {
+          month.innerHTML = monthName[months];
+        }
+      };
+
+      setInterval(CurrentTime, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container1">
+      <div class="todoApp">
+        <h1>Basic Todo App</h1>
+        <div class="inputDiv">
+          <input type="text" placeholder="Enter your task" id="todo-input" />
+          <button id="add-btn">Add</button>
+        </div>
+        <ul id="task-list">
+          <!-- <li>
+            <span id="task">01 Task</span><button id="del-btn">Del</button>
+          </li>
+          <li>
+            <span id="task">01 Task</span><button id="del-btn">Del</button>
+          </li> -->
+          <!-- Dynamic create li  -->
+        </ul>
+      </div>
+    </div>
+    <div id="container2">
+      <div class="pop-box">
+        <div class="pop-contents">
+          <h1 class="h1">Please!</h1>
+          <span>Enter Your Todo Task</span>
+        </div>
+        <button id="closed-btn" onclick="closed()">Closed</button>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box                                 ;
+}
+
+body{
+    background-color: #121212;
+    color:#f1f1f1
+}
+#container1{
+
+    justify-content: center;
+    /* display: none; */
+    display: flex;
+
+
+
+    
+}
+
+.todoApp{
+ margin: 60px auto;
+    width: 550px;
+
+    background-color: #03031d69;
+    border: 1px solid rgba(2, 9, 31, 0.589);
+    padding: 40px 060px;
+    flex-direction: column;
+    display: flex;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(4, 208, 235);
+}
+
+h1{
+    text-align: center;
+    color: rgba(128, 128, 128, 0.753);
+}
+
+#todo-input{
+    width: 100%;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    background-color: #464343;
+    color: aqua;
+}
+
+.inputDiv{
+    display: flex ;
+    align-items: center;
+    
+}
+
+#del-btn{
+    
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    background-color: #b80724;
+    color: rgb(206, 206, 206);
+
+}
+#add-btn{
+ 
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    background-color: #168807;
+    color: rgb(206, 206, 206);
+
+}
+
+#task-list>li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    background-color: #f67f6f;
+   padding-left: 10px;
+   border-radius: 3px;
+
+}
+
+#task-list{
+display: flex;
+/* align-items: center; */
+justify-content: center;
+gap: 10px;
+flex-direction: column;
+
+}
+
+#container2{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.63);
+    top: 0;
+/* change in block */
+    display: none;
+    align-items: center;
+    /* justify-content: center; */
+    
+}
+.pop-box{
+    background-color: #e2dcdc;
+    width: 300px;
+    margin: 0 auto;
+    height: 200px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 0 10px rgb(255, 0, 21);
+    border-radius: 10px;
+}
+.pop-contents{
+    background-color: #073088;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+}
+.h1{
+    color: white;
+}
+
+
+#closed-btn{
+    padding: 10px 60px;
+    background-color: #b80724;
+    color: wheat;
+    border: none;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+}
