@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fan On Off</title>
+    <style>
+      .fan-box {
+        width: 300px;
+        height: 300px;
+
+        border-radius: 50%;
+        /* box-shadow: 0 0 20px red; */
+        margin: 50px auto;
+        padding: 10px;
+
+        animation-name: fan;
+        animation-duration: 3000ms;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: paused;
+      }
+
+      @keyframes fan {
+        0% {
+          transform: rotateZ(0deg);
+          filter: hue-rotate(0deg);
+        }
+        100% {
+          transform: rotateZ(360deg);
+          filter: hue-rotate(360deg);
+          box-shadow: 0 0 50px 20px rgba(0, 0, 255, 0.8);
+        }
+      }
+
+      .speed1,
+      .speed2,
+      .speed3 {
+        padding: 10px 20px;
+        border: none;
+        background-color: green;
+        color: wheat;
+        border-radius: 30px;
+      }
+      .stop {
+        background-color: red;
+        padding: 10px 20px;
+        border: none;
+
+        color: wheat;
+        border-radius: 30px;
+      }
+      .btn {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body style="background-color: #e3dfdf">
+    <div class="fan-box" id="fan-box">
+      <img src="./Big_Computer_Fan_PNG_Clipart-732.png" alt="" width="100%" />
+    </div>
+    <div class="btn">
+      <button class="stop" onclick="stopFan()">Stop</button>
+      <button class="speed1" onclick="startFan(1)">Speed 01</button>
+      <button class="speed2" onclick="startFan(2)">Speed 02</button>
+      <button class="speed3" onclick="startFan(3)">Speed 03</button>
+    </div>
+
+    <script>
+      let fanBox = document.getElementById("fan-box");
+      function stopFan() {
+        fanBox.style.animationPlayState = "paused";
+      }
+
+      function startFan(speed) {
+        if (speed == 1) {
+          fanBox.style.animationPlayState = "running";
+          fanBox.style.animationDuration = "1000ms";
+        } else if (speed == 2) {
+          fanBox.style.animationPlayState = "running";
+          fanBox.style.animationDuration = "500ms";
+        } else {
+          fanBox.style.animationPlayState = "running";
+          fanBox.style.animationDuration = "100ms";
+        }
+      }
+    </script>
+  </body>
+</html>
